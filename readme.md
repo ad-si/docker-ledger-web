@@ -1,10 +1,26 @@
-# Dockerfiles
+# Docker Ledger Web
+
+## Build
+
+```sh
+docker build --tag ledger-web .
+```
+
+## Setup
 
 Mount your local ledger files, expose the server ports,
 start the container and log into it.
 
 ```sh
-docker run --rm -it -v (pwd):/ledger-files -p 3000:3000 -p 3001:3001 --name ledger-web ledger-web bash
+docker run \
+  --interactive \
+  --tty \
+  --rm \
+  --volume (pwd):/ledger-files \
+  --publish 3000:3000 3001:3001 \
+  --name ledger-web \
+  ledger-web \
+  bash
 ```
 
 ## Configuration
@@ -40,6 +56,7 @@ e.g.
 ## Start
 
 Start the server with `npm start`
+and open http://localhost:3000 in your browser.
 
 
 ## References
