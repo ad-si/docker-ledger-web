@@ -16,7 +16,7 @@ docker run \
   --interactive \
   --tty \
   --rm \
-  --volume (pwd):/ledger-files \
+  --volume $PWD:/ledger-files \
   --publish 3000:3000 3001:3001 \
   --name ledger-web \
   ledger-web \
